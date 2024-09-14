@@ -2,18 +2,13 @@
 <html lang="en">
 
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3">
     <title>Intelliai Pro Series | $199 Limited Time Offer</title>
-
-    <!-- Meta Description for SEO -->
     <meta name="description" content="Boost your online presence with Intelliai Pro Series. Get a custom landing page and advanced chatbot for just $199. Limited time offer!">
-
-    <!-- Meta Robots Tag -->
     <meta name="robots" content="index, follow">
-
-    <!-- Canonical Tag -->
-    <link rel="canonical" href="https://www.intelliaipro.com/intellaipro-url">
+    <link rel="canonical" href="https://www.intelliaipro.com/">
 
     <!-- Structured Data (Organization Schema) -->
     <script type="application/ld+json">
@@ -21,8 +16,8 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Intelliai Pro Series",
-        "url": "https://www.yoursite.com",
-        "logo": "https://www.yoursite.com/logo.png",
+        "url": "https://www.intelliaipro.com",
+        "logo": "https://www.intelliaipro.com/logo.png",
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+1-800-555-5555",
@@ -91,6 +86,23 @@
         header .highlight {
             color: var(--highlight-color);
             font-weight: bold;
+        }
+
+        nav {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
         }
 
         main {
@@ -227,10 +239,18 @@
 
     <!-- Load non-critical JS after page load -->
     <script defer src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="33247"></script>
-
 </head>
 
 <body>
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="article1.html">Article 1</a>
+        <a href="article2.html">Article 2</a>
+        <a href="article3.html">Article 3</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
     <header>
         <!-- Banner Image (Now in WebP format) -->
         <picture>
@@ -263,8 +283,7 @@
 
         <section class="section cta">
             <h2>Why Choose Intelliai Pro Series?</h2>
-            <p>No recurring fees, just a one-time payment of $199. Optional updates available for a $50 service fee.</
-                <p>No recurring fees, just a one-time payment of $199. Optional updates available for a $50 service fee.</p>
+            <p>No recurring fees, just a one-time payment of $199. Optional updates available for a $50 service fee.</p>
             <button onclick="window.location.href='#contact'">Get Started Today!</button>
         </section>
 
@@ -293,7 +312,13 @@
                 </picture>
             </div>
         </section>
+    </main>
 
-        <footer>
-    <p>© 2024 Intelliai Pro Series | <a href="#">Privacy Policy</a> | <a href="article1.html">Learn more about Landing Pages</a></p>
-</footer>
+    <footer>
+        <p>© 2024 Intelliai Pro Series | <a href="#">Privacy Policy</a> | <a href="article1.html">Learn more about Landing Pages</a></p>
+    </footer>
+
+    <!-- Defer non-critical JavaScript -->
+    <script defer src="script.js"></script>
+</body>
+</html>
