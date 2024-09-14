@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Click the Button Game</title>
+    <meta name="description" content="A fun interactive game where you try to click the moving button as many times as possible within the time limit.">
+    <meta name="keywords" content="Interactive Game, JavaScript Game, Fun Web Page, HTML5 Game, Click Game">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 40pt;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #333;
+        }
+        #gameArea {
+            position: relative;
+            width: 80%;
+            height: 400px;
+            margin: 0 auto;
+            border: 2px solid #ccc;
+            background-color: #fff;
+            overflow: hidden;
+        }
+        #clickButton {
+            position: absolute;
+            padding: 15px 30px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        #clickButton:hover {
+            background-color: #218838;
+        }
+        #scoreBoard {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        #startButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #timer {
+            font-size: 20px;
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Click the Button Game</h1>
+
+    <p>Try to click the button as many times as you can within <span id="timeLimit">15</span> seconds!</p>
+
+    <button id="startButton">Start Game</button>
+
+    <div id="gameArea">
+        <button id="clickButton" style="display:none;">Click Me!</button>
+    </div>
+
+    <div id="scoreBoard">
+        <p>Your Score: <span id="score">0</span></p>
+        <p>Time Left: <span id="timer">15</span> seconds</p>
+    </div>
+
+    <script>
+        const startButton = document.getElementById('startButton');
+        const clickButton = document.getElementById('clickButton');
+        const scoreSpan = document.getElementById('score');
+        const timerSpan = document.getElementById('timer');
+        const gameArea = document.getElementById('gameArea');
+        const timeLimit = parseInt(document.getElementById('timeLimit').innerText);
+
+        let score = 0;
+        let timeLeft = timeLimit;
+        let gameInterval;
+        let moveInterval;
+
+        startButton.addEventListener('click', startGame);
+
+        function startGame() {
+            score = 0;
+            timeLeft = timeLimit;
+            scoreSpan.innerText = score;
+            timerSpan.innerText = timeLeft;
+            clickButton.style.display = 'block';
+            startButton.disabled = true;
+            moveButton();
+            clickButton.addEventListener('click', incrementScore);
+            gameInterval = setInterval(updateTimer, 1000);
+            moveInterval = setInterval(moveButton, 700);
+        }
+
+        function incrementScore() {
+            score++;
+            scoreSpan.innerText = score;
+        }
+
+        function updateTimer() {
+            timeLeft--;
+            timerSpan.innerText = timeLeft;
+            if (timeLeft <= 0) {
+                endGame();
+            }
+        }
+
+        function endGame() {
+            clearInterval(gameInterval);
+            clearInterval(moveInterval);
+            clickButton.style.display = 'none';
+            startButton.disabled = false;
+            alert('Time\'s up! Your final score is: ' + score);
+        }
+
+        function moveButton() {
+            const maxX = gameArea.clientWidth - clickButton.offsetWidth;
+            const maxY = gameArea.clientHeight - clickButton.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            clickButton.style.left = randomX + 'px';
+            clickButton.style.top = randomY + 'px';
+        }
+    </script>
+
+</body>
+</html>
