@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- SEO Meta Tags -->
@@ -20,13 +20,12 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <!-- CSS Stylesheet -->
-    <!-- Replace with your actual stylesheet to match the landing page -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Assuming this CSS matches your landing page -->
 </head>
 <body>
     <!-- Navigation -->
     <header>
-        <nav>
+        <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="news.html" class="active">News</a></li>
@@ -36,43 +35,57 @@
     </header>
 
     <!-- Main Content -->
-    <main>
-        <h1>Latest News on AI and Online Business</h1>
-        <div id="news-container">
+    <main class="content-wrapper">
+        <section class="headline-section">
+            <h1>Latest News on AI and Online Business</h1>
+            <p>Stay informed with the latest updates and trends in artificial intelligence and the online business world.</p>
+        </section>
+        
+        <div id="news-container" class="news-content">
             <!-- News articles will be loaded here -->
         </div>
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer-section">
         <p>&copy; 2024 Your Website Name. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript Files -->
-    <!-- Replace with your actual scripts to match the landing page -->
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts.js"></script> <!-- Link to your JS file, if any -->
 
     <!-- News API Integration -->
     <script>
-        // Placeholder for your API key
-        const apiKey = "f58841cae99240e4b8b6cc3c286ab18f"
+        // Your API key
+        const apiKey = "f58841cae99240e4b8b6cc3c286ab18f";
 
-        // API endpoint (example using NewsAPI.org)
+        // API endpoint
         const apiUrl = `https://newsapi.org/v2/everything?q=artificial%20intelligence%20OR%20online%20business&sortBy=publishedAt&apiKey=${apiKey}`;
 
         // Fetch news articles
         fetch(apiUrl)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
             .then(data => {
                 const newsContainer = document.getElementById('news-container');
-                data.articles.forEach(article => {
-                    const articleElem = document.createElement('article');
-                    articleElem.innerHTML = `
-                        <h2><a href="${article.url}" target="_blank">${article.title}</a></h2>
-                        <p>${article.description || ''}</p>
-                    `;
-                    newsContainer.appendChild(articleElem);
-                });
+                if (data.articles && data.articles.length > 0) {
+                    data.articles.forEach(article => {
+                        const articleElem = document.createElement('article');
+                        articleElem.classList.add('news-article'); // Add class for custom styling
+                        articleElem.innerHTML = `
+                            <h2><a href="${article.url}" target="_blank">${article.title}</a></h2>
+                            <p>${article.description || 'No description available.'}</p>
+                            <small>Published on: ${new Date(article.publishedAt).toLocaleDateString()}</small>
+                        `;
+                        newsContainer.appendChild(articleElem);
+                    });
+                } else {
+                    newsContainer.innerHTML = '<p>No news articles found.</p>';
+                }
             })
             .catch(error => {
                 console.error('Error fetching news:', error);
