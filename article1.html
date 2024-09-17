@@ -20,12 +20,12 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css"> <!-- Assuming this CSS matches your landing page -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <header>
-        <nav class="nav-menu">
+        <nav class="navbar"> <!-- Updated class to match landing page -->
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="news.html" class="active">News</a></li>
@@ -35,24 +35,24 @@
     </header>
 
     <!-- Main Content -->
-    <main class="content-wrapper">
-        <section class="headline-section">
+    <main class="content-wrapper"> <!-- Matching class -->
+        <section class="headline-section"> <!-- Matching class -->
             <h1>Latest News on AI and Online Business</h1>
             <p>Stay informed with the latest updates and trends in artificial intelligence and the online business world.</p>
         </section>
         
-        <div id="news-container" class="news-content">
+        <div id="news-container" class="news-content"> <!-- Matching class -->
             <!-- News articles will be loaded here -->
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="footer-section">
+    <footer class="footer-section"> <!-- Matching class -->
         <p>&copy; 2024 Your Website Name. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript Files -->
-    <script src="js/scripts.js"></script> <!-- Link to your JS file, if any -->
+    <script src="js/scripts.js"></script>
 
     <!-- News API Integration -->
     <script>
@@ -75,7 +75,7 @@
                 if (data.articles && data.articles.length > 0) {
                     data.articles.forEach(article => {
                         const articleElem = document.createElement('article');
-                        articleElem.classList.add('news-article'); // Add class for custom styling
+                        articleElem.classList.add('news-article'); // Matching class
                         articleElem.innerHTML = `
                             <h2><a href="${article.url}" target="_blank">${article.title}</a></h2>
                             <p>${article.description || 'No description available.'}</p>
