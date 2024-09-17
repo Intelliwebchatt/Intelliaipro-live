@@ -1,58 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- SEO Meta Tags -->
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3">
+    <title>News | Intelliai Pro Series</title>
     <meta name="description" content="Stay updated with the latest news on AI and online business.">
-    <meta name="keywords" content="AI news, online business news, artificial intelligence, business trends">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.intelliaipro.com/news.html">
 
-    <title>News | Your Website Name</title>
+    <!-- Structured Data (Organization Schema) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Intelliai Pro Series",
+        "url": "https://www.intelliaipro.com",
+        "logo": "https://www.intelliaipro.com/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-800-555-5555",
+            "contactType": "Customer Support"
+        }
+    }
+    </script>
 
-    <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="News | Your Website Name">
-    <meta property="og:description" content="Stay updated with the latest news on AI and online business.">
-    <meta property="og:image" content="https://www.yourwebsite.com/images/og-image.jpg">
-    <meta property="og:url" content="https://www.yourwebsite.com/news.html">
-    <meta property="og:type" content="website">
+    <!-- Preload Header Image in WebP Format -->
+    <link rel="preload" as="image" href="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/1000043438.webp" type="image/webp">
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Preconnect and Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
-    <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Inline Critical CSS -->
+    <style>
+        /* Styles copied from your landing page */
+        :root {
+            --primary-color: #001a33;
+            --secondary-color: #003366;
+            --text-color: #000;
+            --background-color: #ffffff;
+            --highlight-color: #cc0000;
+            --button-color: #ff8c00;
+            --button-text-color: #ffffff;
+            --header-gradient: linear-gradient(135deg, #002b4d, #001a33);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: var(--header-gradient);
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-bottom: 5px solid #001a33;
+        }
+
+        header img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+            loading: lazy;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin: 1rem 0;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        header .highlight {
+            color: var(--highlight-color);
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav a.active {
+            color: var(--highlight-color);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .news-article {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .news-article h3 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .news-article p {
+            color: #666;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+            }
+
+            .feature {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+
+    <!-- Load non-critical JS after page load -->
+    <script defer src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="33247"></script>
 </head>
+
 <body>
-    <!-- Navigation -->
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="news.html" class="active">News</a>
+        <a href="article1.html">Article 1</a>
+        <a href="article2.html">Article 2</a>
+        <a href="article3.html">Article 3</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
     <header>
-        <nav class="navbar"> <!-- Updated class to match landing page -->
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="news.html" class="active">News</a></li>
-                <!-- Add more navigation items as needed -->
-            </ul>
-        </nav>
+        <!-- Banner Image -->
+        <picture>
+            <source srcset="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/1000043438.webp" type="image/webp">
+            <img src="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/main/fallback-banner.jpg" alt="Intelliai Pro Series Banner" width="1920" height="500" loading="lazy">
+        </picture>
+        <h1>Latest News on AI and Online Business</h1>
+        <p class="highlight">Stay informed with the most recent updates</p>
     </header>
 
-    <!-- Main Content -->
-    <main class="content-wrapper"> <!-- Matching class -->
-        <section class="headline-section"> <!-- Matching class -->
-            <h1>Latest News on AI and Online Business</h1>
-            <p>Stay informed with the latest updates and trends in artificial intelligence and the online business world.</p>
+    <main>
+        <section class="section">
+            <div id="news-container">
+                <!-- News articles will be loaded here -->
+            </div>
         </section>
-        
-        <div id="news-container" class="news-content"> <!-- Matching class -->
-            <!-- News articles will be loaded here -->
-        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer-section"> <!-- Matching class -->
-        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+    <footer>
+        <p>© 2024 Intelliai Pro Series | <a href="#">Privacy Policy</a></p>
     </footer>
 
-    <!-- JavaScript Files -->
-    <script src="js/scripts.js"></script>
+    <!-- Defer non-critical JavaScript -->
+    <script defer src="script.js"></script>
 
     <!-- News API Integration -->
     <script>
@@ -60,24 +215,19 @@
         const apiKey = "f58841cae99240e4b8b6cc3c286ab18f";
 
         // API endpoint
-        const apiUrl = `https://newsapi.org/v2/everything?q=artificial%20intelligence%20OR%20online%20business&sortBy=publishedAt&apiKey=${apiKey}`;
+        const apiUrl = `https://newsapi.org/v2/everything?q=artificial+intelligence%20OR%20online%20business&sortBy=publishedAt&apiKey=${apiKey}`;
 
         // Fetch news articles
         fetch(apiUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
-                }
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
                 const newsContainer = document.getElementById('news-container');
                 if (data.articles && data.articles.length > 0) {
                     data.articles.forEach(article => {
-                        const articleElem = document.createElement('article');
-                        articleElem.classList.add('news-article'); // Matching class
+                        const articleElem = document.createElement('div');
+                        articleElem.classList.add('news-article');
                         articleElem.innerHTML = `
-                            <h2><a href="${article.url}" target="_blank">${article.title}</a></h2>
+                            <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
                             <p>${article.description || 'No description available.'}</p>
                             <small>Published on: ${new Date(article.publishedAt).toLocaleDateString()}</small>
                         `;
@@ -94,4 +244,5 @@
             });
     </script>
 </body>
+
 </html>
